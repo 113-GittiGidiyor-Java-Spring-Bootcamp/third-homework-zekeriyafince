@@ -3,11 +3,15 @@ package com.zekeriyafince.schoolmanagement.dto;
 import com.zekeriyafince.schoolmanagement.entity.abstracts.Instructor;
 import com.zekeriyafince.schoolmanagement.entity.concretes.Student;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.List;
 
-@Data
+@Getter
+@NoArgsConstructor
 public class CourseCreateDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -20,4 +24,10 @@ public class CourseCreateDto implements Serializable {
     private List<Student> students;
 
     private Instructor instructor;
+
+    public CourseCreateDto(String name, String courseCode, int credit) {
+        this.name = name;
+        this.courseCode = courseCode;
+        this.credit = credit;
+    }
 }
